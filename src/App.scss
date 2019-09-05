@@ -1,0 +1,16 @@
+.app-wrapper {
+  display: grid;
+  grid-template-rows: min-content 40vh repeat(2, min-content);
+  grid-template-columns: minmax(min-content, 120px) 1fr;
+  grid-gap: 10px;
+  grid-template-areas: " h h  "
+    " n c  "
+    " n c  "
+    "n c";
+
+}
+
+
+
+
+
