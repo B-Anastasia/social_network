@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Profile.module.scss';
 
+
 const Profile = () => {
     return(
         <div className={styles.content}  >
@@ -14,7 +15,7 @@ const Profile = () => {
             
           </div>
         </div>
-        <div className={styles.post}>
+        <div>
           My posts
           <div>
             New post

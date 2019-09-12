@@ -1,0 +1,28 @@
+
+@import "./../../base";
+
+
+.nav {
+    grid-row: 2/-1;
+    grid-column: 1/2;
+    background-color: rgba($color-primary,1);
+    padding: 1rem;
+    
+    ul{
+      list-style: none;
+      text-decoration: none;
+      
+      a{
+        color: $color-white;
+        text-decoration: none;
+
+        
+      }
+      
+    }
+
+    .active{
+      color:red;
+    }
+  }
+  

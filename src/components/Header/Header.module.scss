@@ -1,0 +1,12 @@
+@import "./../../base";
+
+.header {
+    grid-area: h;
+    background-color: $color-primary;
+  
+  }
+  
+  .header img {
+    width: 10rem;
+    margin: 4px;
+  }

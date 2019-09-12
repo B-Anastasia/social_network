@@ -1,16 +1,23 @@
+@import "./base";
+
 .app-wrapper {
-  display: grid;
-  grid-template-rows: min-content 40vh repeat(2, min-content);
-  grid-template-columns: minmax(min-content, 120px) 1fr;
+
+  @include absCenter;
+  // top:0;
+  // transform: translateX(-50%);
+  width: $grid-width;
   grid-gap: 10px;
+  display: grid;
+  min-height: 100vh;
+  // width: 100vw;
+  background-color: $color-primary-light;
+  grid-template-rows: min-content 40vh 1fr;
+  grid-template-columns: minmax(min-content, 180px) 1fr;
   grid-template-areas: " h h  "
     " n c  "
     " n c  "
     "n c";
-
+    // background-image: linear-gradient(to right bottom, rgba($color-white, 0.8), rgba($color-primary-brown, 0.6)), url(./party1.jpg);    
+  //   background-size: cover;
+	// background-position: center; 
 }
-
-
-
-
-
