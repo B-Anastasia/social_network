@@ -1,7 +1,8 @@
 @import "./base";
 
-.app-wrapper {
 
+
+.app-wrapper {
   @include absCenter;
   // top:0;
   // transform: translateX(-50%);
@@ -17,7 +18,7 @@
     " n c  "
     " n c  "
     "n c";
-    // background-image: linear-gradient(to right bottom, rgba($color-white, 0.8), rgba($color-primary-brown, 0.6)), url(./party1.jpg);    
+  // background-image: linear-gradient(to right bottom, rgba($color-white, 0.8), rgba($color-primary-brown, 0.6)), url(./party1.jpg);    
   //   background-size: cover;
-	// background-position: center; 
+  // background-position: center; 
 }
