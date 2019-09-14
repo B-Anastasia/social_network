@@ -1,28 +1,39 @@
-
 @import "./../../base";
 
-
 .nav {
-    grid-row: 2/-1;
-    grid-column: 1/2;
-    background-color: rgba($color-primary,1);
-    padding: 1rem;
-    
-    ul{
-      list-style: none;
-      text-decoration: none;
-      
-      a{
-        color: $color-white;
-        text-decoration: none;
+  grid-row: 2/-1;
+  grid-column: 1/2;
+  background-color: rgba($color-primary, 1);
 
-        
-      }
-      
+  ul {
+    list-style: none;
+    text-decoration: none;
+
+li{
+  padding: 5px;
+  margin-left: 5px;
+
+  &:hover{
+    a {
+      color: $color-primary-dark;
     }
 
-    .active{
-      color:red;
+    background-color: $color-primary-green;
+  }
+}
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+      width: 100%;
     }
   }
-  
+
+  .active {
+    a {
+      color: $color-primary-dark;
+    }
+
+    background-color: $color-primary-light;
+  }
+}

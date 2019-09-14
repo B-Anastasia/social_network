@@ -4,13 +4,10 @@
 
 .app-wrapper {
   @include absCenter;
-  // top:0;
-  // transform: translateX(-50%);
   width: $grid-width;
   grid-gap: 10px;
   display: grid;
   min-height: 100vh;
-  // width: 100vw;
   background-color: $color-primary-light;
   grid-template-rows: min-content 40vh 1fr;
   grid-template-columns: minmax(min-content, 180px) 1fr;
@@ -21,4 +18,10 @@
   // background-image: linear-gradient(to right bottom, rgba($color-white, 0.8), rgba($color-primary-brown, 0.6)), url(./party1.jpg);    
   //   background-size: cover;
   // background-position: center; 
+
+  &-content {
+    grid-area: c;
+    font-size: 1.5rem;
+
+  }
 }
