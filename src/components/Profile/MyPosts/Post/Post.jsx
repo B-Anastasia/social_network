@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Post.module.scss";
 
-const Post = props => {
+const Post = (props) => {
   // debugger;
   return (
     <div className={s.item}>

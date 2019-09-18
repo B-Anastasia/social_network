@@ -7,7 +7,7 @@ import logo from './logo_main.png';
 const Header = () => {
     return(
         <header className={styles.header}>
-        <img src={logo}/>
+        <img alt='logo' src={logo}/>
         </header>
     );
 }

@@ -6,8 +6,10 @@ const Navbar = () => {
     return(
         <nav className={s.nav} >
 
-          <NavLink to="/profile" activeClassName={s.active}>Profile</NavLink>
-          <NavLink to="/dialogs" activeClassName={s.active}>Messages</NavLink>
+          <NavLink exact to="/" activeClassName={s.active}>
+              Profile
+          </NavLink>
+          <NavLink to="/dialogs" activeClassName={s.active}> Messages</NavLink>
           <NavLink to="/news" activeClassName={s.active}>News</NavLink>
           <NavLink to="/music" activeClassName={s.active}>Music</NavLink>
           <NavLink to="/settings" activeClassName={s.active}>Settings</NavLink>

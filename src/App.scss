@@ -1,16 +1,26 @@
 @import "./base";
 
-
+$content: calc(#{$grid-width} - 18rem);
 
 .app-wrapper {
-  @include absCenter;
+  //@include absCenter;
   width: $grid-width;
+  //top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  @media only screen and (max-width: $bp-largest) {
+    width: 80%;   // 1rem=8px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;   // 1rem=8px;
+  }
+
   grid-gap: 10px;
   display: grid;
   min-height: 100vh;
   background-color: $color-primary-light;
   grid-template-rows: min-content 40vh 1fr;
-  grid-template-columns: minmax(min-content, 180px) 1fr;
+  grid-template-columns: minmax(min-content, 180px) minmax(min-content, 1fr);
   grid-template-areas: " h h  "
     " n c  "
     " n c  "

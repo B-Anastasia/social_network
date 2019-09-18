@@ -1,7 +1,41 @@
-.container{
-    
-        grid-area: c;
-        background-color: blue;
-      
-      
+@import '../../base';
+
+.dialogs {
+  color: $color-primary;
+  padding: 1rem;
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+
+  .dialogsItems {
+          grid-column: 1/2;
+    .dialog {
+
+    }
+  }
+
+  .messages {
+    padding-left: 2rem;
+        grid-column: 2/3;
+    .message {
+      padding: 5px;
+    }
+  }
+
+  a{
+
+    color: $color-primary;
+    width: 100%;
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover{
+      color: $color-primary-green;
+    }
+
+    &.active{
+      color: $color-primary-dark;
+    }
+  }
 }
