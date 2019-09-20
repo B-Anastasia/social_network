@@ -1,5 +1,10 @@
-.item{
-    img{
-        height: 3rem;
-    }
+@import '../../../../base';
+
+.item {
+  margin-bottom: 1rem;
+  background-color: $color-white;
+
+  img {
+    height: 3rem;
+  }
 }
