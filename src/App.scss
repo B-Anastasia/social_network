@@ -3,9 +3,7 @@
 $content: calc(#{$grid-width} - 18rem);
 
 .app-wrapper {
-  //@include absCenter;
   width: $grid-width;
-  //top: 50%;
   margin-left: auto;
   margin-right: auto;
   @media only screen and (max-width: $bp-largest) {
