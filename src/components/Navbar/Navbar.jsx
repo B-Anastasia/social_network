@@ -5,7 +5,7 @@ import User from "../User/User";
 
 const Navbar = (props) => {
     let linkName = props.state.map(link => <NavLink to={link.path} activeClassName={s.active}>{link.name}</NavLink>);
-    let friends = props.user.map( user =>  <User img={user.img} name={user.name} /> );
+    let friends = props.user.map( user => <User img={user.img} name={user.name} /> );
     return(
         <nav className={s.nav} >
 
@@ -13,7 +13,9 @@ const Navbar = (props) => {
               Profile
           </NavLink>
             {linkName}
-            {friends}
+            <div className={s.friends}>
+                {friends}
+            </div>
       </nav>
     );
 }
