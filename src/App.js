@@ -11,15 +11,14 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Friends from "./components/Friends/Friends";
 
 const App = (props) => {
-  // console.log(props);
-
+// debugger;
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar state={props.state.navbar} user={props.state.dialogsPage.dialogs} />
         <div className="app-wrapper-content">
-          <Route exact path="/" render={()=><Profile state={props.state.profilePage}/>} />
+          <Route exact path="/" render={()=><Profile state={props.state.profilePage} addPost={props.addPost} />} />
           <Route path="/dialogs" render={()=><Dialogs state={props.state.dialogsPage}/>} />
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />

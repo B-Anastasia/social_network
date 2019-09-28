@@ -5,15 +5,20 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 const Profile = (props) => {
-
+// debugger;
 
 
     return (
         <div className={s.content}>
 
-            <ProfileInfo name="Anastasia B."/>
+            <ProfileInfo
+                name="Anastasia B."
+            />
 
-            <MyPosts state={props.state.posts}/>
+            <MyPosts
+                state={props.state.posts}
+                addPost={props.addPost}
+            />
 
         </div>
     );
