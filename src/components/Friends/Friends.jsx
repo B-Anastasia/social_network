@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Friends.module.scss';
+// import s from './Friends.module.scss';
 import User from "../User/User";
 
 const Friends = (props) => {
