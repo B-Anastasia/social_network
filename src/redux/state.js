@@ -1,5 +1,10 @@
 import {rerenderEntireTree} from "../render";
 
+// let rerenderEntireTree= () =>{
+//     console.log("State was changed");
+// }
+
+
 let state = {
 
     profilePage: {
@@ -47,16 +52,17 @@ let state = {
         {id:5, path: "/friends", name: "Friends" },
     ]
 }
-
+window.state=state;
 
 export let addPost = (postMessage) => {
     // debugger;
     let newPost= {
         id: 3,
-        message: postMessage,
+        message: state.profilePage.newPostMessage,
         likes: 0
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostMessage='';
     rerenderEntireTree(state);
 }
 export let updateMessagePost = (newText) => {
