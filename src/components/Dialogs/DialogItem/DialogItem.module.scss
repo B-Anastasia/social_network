@@ -1,0 +1,19 @@
+@import '../../../base';
+  a.dialog {
+
+    color: $color-primary;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-green;
+    }
+
+    &.active {
+      color: $color-primary-dark;
+    }
+  }
+
+
+
