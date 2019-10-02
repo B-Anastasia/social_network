@@ -75,7 +75,25 @@ let store = {
     },
     subscribe(observer){
         this._callSubscriber=observer;
+    },
+    dispatch(action){
+        if( action === 'ADD-POST' ){
+            let state= this._state;
+            let newPost= {
+                id: 3,
+                message: state.profilePage.newPostMessage,
+                likes: 0
+            };
+            state.profilePage.posts.push(newPost);
+            state.profilePage.newPostMessage='';
+            this._callSubscriber(state);
+        } else if ( action === 'UPDATE-NEW-MESSAGE-POST' ){
+            let state= this._state;
+            state.profilePage.newPostMessage = action.newText;
+            this._callSubscriber(state);
+        }
     }
+
 }
 
 export default store;
