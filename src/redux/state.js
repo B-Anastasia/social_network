@@ -47,37 +47,19 @@ let store = {
             {id:5, path: "/friends", name: "Friends" },
         ]
     },
-
     _callSubscriber(){
         console.log("State was changed");
     },
-    setState(){
 
-    },
     getState(){
         return this._state;
-    },
-    addPost(){
-        let state= this._state;
-        let newPost= {
-            id: 3,
-            message: state.profilePage.newPostMessage,
-            likes: 0
-        };
-        state.profilePage.posts.push(newPost);
-        state.profilePage.newPostMessage='';
-        this._callSubscriber(state);
-    },
-    updateMessagePost(newText){
-        let state= this._state;
-        state.profilePage.newPostMessage = newText;
-        this._callSubscriber(state);
     },
     subscribe(observer){
         this._callSubscriber=observer;
     },
+
     dispatch(action){
-        if( action === 'ADD-POST' ){
+        if( action.type === 'ADD-POST' ){
             let state= this._state;
             let newPost= {
                 id: 3,
@@ -87,9 +69,9 @@ let store = {
             state.profilePage.posts.push(newPost);
             state.profilePage.newPostMessage='';
             this._callSubscriber(state);
-        } else if ( action === 'UPDATE-NEW-MESSAGE-POST' ){
+        } else if ( action.type === 'UPDATE-NEW-MESSAGE-POST' ){
             let state= this._state;
-            state.profilePage.newPostMessage = action.newText;
+            state.profilePage.newPostMessage = action.addingText;
             this._callSubscriber(state);
         }
     }
@@ -170,5 +152,23 @@ window.store=store;
 // export const subscribe = (observer) => {
 // rerenderEntireTree=observer;  //pattern - observer
 // }
+
+//
+// addPost(){
+//     let state= this._state;
+//     let newPost= {
+//         id: 3,
+//         message: state.profilePage.newPostMessage,
+//         likes: 0
+//     };
+//     state.profilePage.posts.push(newPost);
+//     state.profilePage.newPostMessage='';
+//     this._callSubscriber(state);
+// },
+// updateMessagePost(newText){
+//     let state= this._state;
+//     state.profilePage.newPostMessage = newText;
+//     this._callSubscriber(state);
+// },
 
 // export default state;
