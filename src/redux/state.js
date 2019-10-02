@@ -47,7 +47,8 @@ let store = {
             {id:5, path: "/friends", name: "Friends" },
         ]
     },
-    rerenderEntireTree(){
+
+    _callSubscriber(){
         console.log("State was changed");
     },
     setState(){
@@ -65,20 +66,20 @@ let store = {
         };
         state.profilePage.posts.push(newPost);
         state.profilePage.newPostMessage='';
-        this.rerenderEntireTree(state);
+        this._callSubscriber(state);
     },
     updateMessagePost(newText){
         let state= this._state;
         state.profilePage.newPostMessage = newText;
-        this.rerenderEntireTree(state);
+        this._callSubscriber(state);
     },
     subscribe(observer){
-        this.rerenderEntireTree=observer;
+        this._callSubscriber=observer;
     }
 }
 
 export default store;
-
+window.store=store;
 // let rerenderEntireTree= () =>{
 //     console.log("State was changed");
 // }
