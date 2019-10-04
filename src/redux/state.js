@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';                     //action-type
+const ADD_MESSAGE = 'ADD-MESSAGE';                     //action-type
+const UPDATE_NEW_MESSAGE_POST = 'UPDATE-NEW-MESSAGE-POST';
+const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
+
 
 let store = {
     _state: {
@@ -21,6 +26,7 @@ let store = {
                 {id:8, name:'Sergey', img:"/img/users/user_8.jpg"}
             ],
             messages:{
+                startMessage: 'Write here',
                 messagesFriendOne: [
                     {id:1, message:'Hi'},
                     {id:2, message:'How are you?'},
@@ -59,8 +65,8 @@ let store = {
     },
 
     dispatch(action){
-        if( action.type === 'ADD-POST' ){
-            let state= this._state;
+        let state= this._state;
+        if( action.type === ADD_POST ){
             let newPost= {
                 id: 3,
                 message: state.profilePage.newPostMessage,
@@ -69,14 +75,36 @@ let store = {
             state.profilePage.posts.push(newPost);
             state.profilePage.newPostMessage='';
             this._callSubscriber(state);
-        } else if ( action.type === 'UPDATE-NEW-MESSAGE-POST' ){
-            let state= this._state;
+        } else if ( action.type === UPDATE_NEW_MESSAGE_POST ){
             state.profilePage.newPostMessage = action.addingText;
+            this._callSubscriber(state);
+        } else if ( action.type === ADD_MESSAGE ) {
+            let newMessage = {
+                id: 7,
+                message: state.dialogsPage.messages.startMessage,
+            };
+            state.dialogsPage.messages.messagesFriendOne.push(newMessage);
+            state.dialogsPage.messages.startMessage='';
+            debugger;
+            this._callSubscriber(state);
+        } else if ( action.type === UPDATE_NEW_MESSAGE ) {
+            state.dialogsPage.messages.startMessage = action.addingText;
             this._callSubscriber(state);
         }
     }
 
 }
+export const addPostActionCreator = () => ({ type: ADD_POST });  //action-creator for profile page
+export const updateNewMessagePostActionCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE_POST,
+    addingText: text
+});
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE});  //action-creator for dialogs page
+export const updateNewMessageActionCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE,
+    addingText: text
+});
+
 
 export default store;
 window.store=store;
