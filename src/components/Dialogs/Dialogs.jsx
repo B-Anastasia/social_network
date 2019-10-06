@@ -15,12 +15,13 @@ const Dialogs = (props) => {
         // <Message message={message.messagesFriendTwo.message} id={message.messagesFriendTwo.id}/>
 
 );
-    let messageText = React.createRef();
+    // let messageText = React.createRef();
     let addMessage= () => {
         props.dispatch(addMessageActionCreator());
     }
-    let changeTextMessage = () =>{
-        let text=messageText.current.value;
+    let changeTextMessage = (e) =>{
+        let text= e.target.value;
+        // let text=messageText.current.value;
         props.dispatch(updateNewMessageActionCreator(text));
     }
 
@@ -30,14 +31,21 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={s.messages}>
-                {messagesElements}
-                <textarea
-                    ref={messageText}
-                    onChange={changeTextMessage}
-                    value={props.state.messages.startMessage}
-                    cols="9" rows="5"
-                />
-                <button onClick={addMessage}>Push</button>
+                <div>{messagesElements}</div>
+                <div>
+                    <div>
+                        <textarea
+                        placeholder='Write your message here'
+                        // ref={messageText}
+                        onChange={changeTextMessage}
+                        value={props.state.messages.startMessage}
+                        cols="15" rows="5"
+                    />
+                    </div>
+                    <div>
+                        <button onClick={addMessage}>Push</button>
+                    </div>
+                </div>
             </div>
 
 

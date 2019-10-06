@@ -26,7 +26,7 @@ let store = {
                 {id:8, name:'Sergey', img:"/img/users/user_8.jpg"}
             ],
             messages:{
-                startMessage: 'Write here',
+                startMessage: '',
                 messagesFriendOne: [
                     {id:1, message:'Hi'},
                     {id:2, message:'How are you?'},
@@ -61,7 +61,7 @@ let store = {
         return this._state;
     },
     subscribe(observer){
-        this._callSubscriber=observer;
+        this._callSubscriber = observer;   //observer
     },
 
     dispatch(action){
@@ -83,9 +83,8 @@ let store = {
                 id: 7,
                 message: state.dialogsPage.messages.startMessage,
             };
+            state.dialogsPage.messages.startMessage ='';
             state.dialogsPage.messages.messagesFriendOne.push(newMessage);
-            state.dialogsPage.messages.startMessage='';
-            debugger;
             this._callSubscriber(state);
         } else if ( action.type === UPDATE_NEW_MESSAGE ) {
             state.dialogsPage.messages.startMessage = action.addingText;
