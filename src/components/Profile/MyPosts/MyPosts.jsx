@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./MyPosts.module.scss";
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewMessagePostActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewMessagePostActionCreator} from "../../../redux/profile-reducer";
 
 const MyPosts = (props) => {
 
@@ -14,6 +14,7 @@ const MyPosts = (props) => {
     };
 
     let onPostChange = () => {
+        // debugger;
         let text = newText.current.value;
         let action=updateNewMessagePostActionCreator(text);
         props.dispatch(action);
